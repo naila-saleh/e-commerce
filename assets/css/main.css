@@ -287,9 +287,13 @@ ul{
 }
 .categories .container{
     margin-top: 100px;
+    justify-content: center;
+}
+.categories .categoryItem{
+    position: relative;
 }
 .categories .categoryItem:first-child{
-    width: 40%;
+    width: 60%;
 }
 .categories .categoryItem img{
     width: 100%;
@@ -297,7 +301,13 @@ ul{
     z-index: 1;
 }
 .categories .categoryItems:last-child{
+    background-color: var(--white);
+    border-radius: 25px;
+    padding: 25px;
     z-index: 5;
+    position: absolute;
+    bottom: -8%;
+    left: -18%;
 }
 .categories .categoryItems h2{
     font-size: 120px;
@@ -309,6 +319,7 @@ ul{
 .categories .categoryItems .item{
     width: 198.5px;
     border-radius: 20px;
+    align-content: center;
 }
 .categories .categoryItems .item:nth-child(1){
     background-color: rgb(225,252,242);
@@ -332,8 +343,69 @@ ul{
     font-size: 16px;
     font-weight: 500;
 }
-.categories .categoryItems .item span{}
-
+@media (max-width: 1410px) {
+    .categories .categoryItem:first-child{
+        width: 50%;
+    }
+    .categories .categoryItems{
+        line-height: 15px;
+        gap: 15px !important;
+    }
+    .categories .categoryItems .item{
+        width: 150px;
+        height: 150px;
+        padding: 35px !important;
+    }
+    .categories .categoryItems .item .itemImg{
+        height: 35px;
+    }
+    .categories .categoryItems .item h3{
+        margin-top: 10px;
+    }
+    .categories .categoryItems h2{
+        font-size: 100px;
+    }
+}
+@media (max-width: 1200px) {
+    .categories .categoryItems h2{
+        font-size: 80px;
+    }
+}
+@media (max-width: 1050px) {
+    .categories{
+        text-align: center;
+    }
+    .categories .container{
+        flex-wrap: wrap;
+    }
+    .categories .categoryItem:first-child{
+        width: 90%;
+    }
+    .categories .categoryItems:last-child{
+        position:static;
+        justify-content: center;
+    }
+    .categories .categoryItems .item{
+        width: 200px;
+        height: 200px;
+    }
+    .categories .categoryItems h2{
+        font-size: 90px;
+    }
+}
+@media (max-width: 900px) {
+    .categories .categoryItems{
+        flex-wrap: wrap;
+    }
+    .categories .categoryItems h2{
+        font-size: 70px;
+    }
+}
+@media (max-width: 500px){
+    .categories .categoryItems h2{
+        font-size: 50px;
+    }
+}
 /* end categories */
 
 /* start */
@@ -379,9 +451,11 @@ ul{
 }
 .footer .container .footerSection:first-child{
     width: 30%;
+    flex-grow: 1;
 }
 .footer .container .footerSection:last-child{
     gap: 90px;
+    justify-content: center;
 }
 .footer .container .footerSection p{
     font-size: 16px;
