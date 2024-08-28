@@ -1,3 +1,9 @@
+var body = document.querySelector('body');
+var darkBtn = document.querySelector('.darkBtn');
+function darkMode(){
+    body.classList.toggle('darkMode');
+}
+darkBtn.onclick=darkMode;
 const getProducts = async ()=>{
     const {data} = await axios.get(`https://dummyjson.com/products/category/groceries`);
     const result = data.products.map((product)=>`

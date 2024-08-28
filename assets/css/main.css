@@ -50,20 +50,48 @@ ul{
 /* start darkBtn */
 .darkBtn{
     position: fixed;
-    right: 0;
+    right: 1px;
     top: 50%;
     border-top: solid 0.5px var(--black);
     border-bottom: solid 0.5px var(--black);
     border-left: solid 0.5px var(--black);
+    border-right: solid var(--white);
     background-color: var(--white);
     width: 50px;
     padding: 8px;
     border-bottom-left-radius: 15px;
     border-top-left-radius: 15px;
+    z-index: 99;
+}
+.darkBtn svg{
+    fill: var(--black);
+}
+.darkMode{
+    color: #3D4750FF;
+    fill: #3D4750FF;
+    background-color: black;
+    --gray1: #6e6e6e;
+    --gray2: #F8F8FBF0;
+    --white: #000;
+    --gray3: #3D475019;
+    --blue: #6C7FD8;
+    --black: #fff;
+    --gray4: #3D4750FF;
+    --gray5: #1d1d1d;
+    .categories .categoryItem h2{
+        text-shadow: 1px 1px #fff, -1px 1px #fff, 1px -1px #fff, -1px -1px #fff;
+    }
+    .navbar-nav .nav-link.active, .navbar-nav .nav-link.show {
+        color: rgb(245 245 245);
+    }
+    transition: 0.5s;
 }
 /* end darkBtn */
 
 /* start logo&SearchBar */
+.logoAndSearchBar{
+    background-color: var(--white);
+}
 .logoAndSearchBar .navbar-collapse form{
     align-items: center;
     gap: 5px;
@@ -114,6 +142,7 @@ ul{
     z-index: 999;
     border-top: 0.5px solid var(--gray3);
     border-bottom: 0.5px solid var(--gray3);
+    background-color: var(--white);
 }
 .mainNavbar .navbar-brand svg,.mainNavbar .dropdown{
     width: 45px;
