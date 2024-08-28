@@ -2,7 +2,7 @@ const getProducts = async ()=>{
     const {data} = await axios.get(`https://dummyjson.com/products/category/groceries`);
     const result = data.products.map((product)=>`
             <div class="product">
-                <img src="${product.thumbnail}"/>
+                <div class="image"><img src="${product.thumbnail}"/></div>
                 <div class="tagsAndRating">
                     <a href="#"><span>${product.tags}</span></a>
                     <div class="rating">

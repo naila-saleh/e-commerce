@@ -47,6 +47,22 @@ ul{
 }
 /* end header */
 
+/* start darkBtn */
+.darkBtn{
+    position: fixed;
+    right: 0;
+    top: 50%;
+    border-top: solid 0.5px var(--black);
+    border-bottom: solid 0.5px var(--black);
+    border-left: solid 0.5px var(--black);
+    background-color: var(--white);
+    width: 50px;
+    padding: 8px;
+    border-bottom-left-radius: 15px;
+    border-top-left-radius: 15px;
+}
+/* end darkBtn */
+
 /* start logo&SearchBar */
 .logoAndSearchBar .navbar-collapse form{
     align-items: center;
@@ -447,6 +463,10 @@ ul{
     padding: 20px;
     justify-content: center;
 }
+.products .container .row .productsItems .product .image{
+    overflow: hidden;
+    border-bottom: 0.5px solid var(--gray3);
+}
 .products .container .row .productsItems .product img{
     border-bottom: 0.5px solid var(--gray3);
     width: 100%;
@@ -455,7 +475,6 @@ ul{
 }
 .products .container .row .productsItems .product img:hover{
     transform: scale(1.1);
-    z-index: -1;
 }
 .products .container .row .productsItems .product span{
     margin: 7px 0;
