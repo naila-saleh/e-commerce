@@ -9,9 +9,10 @@ const getProducts = async ()=>{
     return data;
 }
 const displayProducts = async ()=>{
-    const data = await getProducts();
-    const result = data.products.map((product)=>{
-        return `
+    try{
+        const data = await getProducts();
+        const result = data.products.map((product) => {
+            return `
             <div class="product">
                 <div class="image"><img src="${product.thumbnail}"/></div>
                 <div class="tagsAndRating">
@@ -34,8 +35,13 @@ const displayProducts = async ()=>{
                 </div>
             </div>
         `;
-    }).join(' ');
-    document.querySelector('.productsItems').innerHTML=result;
-    document.querySelector('.overlay').classList.add('d-none');
+        }).join(' ');
+        document.querySelector('.productsItems').innerHTML = result;
+    }catch (e){
+        const result=`<h3>Error${e.message}</h3>`;
+        document.querySelector('.productsItems').innerHTML = result;
+    }finally {
+        document.querySelector('.overlay').classList.add('d-none');
+    }
 }
 displayProducts();
