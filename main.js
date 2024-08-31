@@ -6,7 +6,12 @@ function darkMode(){
 darkBtn.onclick=darkMode;
 const getProducts = async ()=>{
     const {data} = await axios.get(`https://dummyjson.com/products/category/groceries`);
-    const result = data.products.map((product)=>`
+    return data;
+}
+const displayProducts = async ()=>{
+    const data = await getProducts();
+    const result = data.products.map((product)=>{
+        return `
             <div class="product">
                 <div class="image"><img src="${product.thumbnail}"/></div>
                 <div class="tagsAndRating">
@@ -28,8 +33,9 @@ const getProducts = async ()=>{
                     <span>${product.weight}g</span>
                 </div>
             </div>
-        `
-    ).join(' ');
+        `;
+    }).join(' ');
     document.querySelector('.productsItems').innerHTML=result;
+    document.querySelector('.overlay').classList.add('d-none');
 }
-getProducts();
+displayProducts();
