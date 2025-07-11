@@ -119,11 +119,11 @@ ul{
 .darkMode{
     color: #3D4750FF;
     fill: #3D4750FF;
-    background-color: black;
+    background-color: #000;
     --gray1: #6e6e6e;
     --gray2: #F8F8FBF0;
     --white: #000;
-    --gray3: #3D475019;
+    --gray3: #333;
     --blue: #6C7FD8;
     --black: #fff;
     --gray4: #3D4750FF;
@@ -333,6 +333,7 @@ ul{
     width: 100%;
     height: 100%;
     z-index: 0;
+    fill: var(--white);
 }
 @media (min-width: 1000px) {
     .beginningPage .welcomePage .welcomeParagraph{
